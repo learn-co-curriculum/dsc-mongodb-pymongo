@@ -4,8 +4,9 @@
 
 In the previous lesson, we introduced the popular NoSQL database __MongoDB__. We executed CRUD operations on a sample dataset using __MongoDB Atlas__, a cloud-based service offered by MongoDB. 
 
-In this lesson, we will expand on your knowledge of MongoDB, cloud computing, and CRUD operations to manipulate data from a MongoDB Atlas database in a Jupyter notebook using the popular Python library, __Pymongo__. This is very similar to the way that sqlite3 allowed us to connect to and work with SQLite databases in previous lessons. 
+In this lesson, we will expand on your knowledge of MongoDB, cloud computing, and CRUD operations to manipulate data from a MongoDB Atlas database in a Jupyter notebook using the popular Python library, __Pymongo__. 
 
+This is very similar to the way that sqlite3 allowed us to connect to and work with SQLite databases in previous lessons. In fact, we recommend taking a few minutes to review and bookmark this [table](https://www.tutorialspoint.com/mongodb/mongodb_overview.htm) that contrasts SQL terminology versus Mongo terminology. For example, we can compare MongoDB documents to SQL records. 
 As a reminder __CRUD__ operations include:
 
 - **_C_**reating a MongoDB database
@@ -157,7 +158,7 @@ results
 
 
 
-    <pymongo.results.InsertOneResult at 0x7f97a891cd90>
+    <pymongo.results.InsertOneResult at 0x7fd378297df0>
 
 
 
@@ -175,7 +176,7 @@ results.inserted_id
 
 
 
-    ObjectId('63975f6b4c7a4b738f1ee223')
+    ObjectId('639764ed4bbc2d79f2d8d023')
 
 
 
@@ -201,9 +202,9 @@ results_2.inserted_ids
 
 
 
-    [ObjectId('63975f6b4c7a4b738f1ee224'),
-     ObjectId('63975f6b4c7a4b738f1ee225'),
-     ObjectId('63975f6b4c7a4b738f1ee226')]
+    [ObjectId('639764ed4bbc2d79f2d8d024'),
+     ObjectId('639764ed4bbc2d79f2d8d025'),
+     ObjectId('639764ed4bbc2d79f2d8d026')]
 
 
 
@@ -287,10 +288,10 @@ for x in query_1:
     print(x)
 ```
 
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee223'), 'name': 'John Doe', 'address': '123 elm street', 'age': 28}
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee224'), 'name': 'Jane Doe', 'address': '234 elm street', 'age': 7}
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee225'), 'name': 'Santa Claus', 'address': 'The North Pole', 'age': 547}
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee226'), 'name': 'John Doe jr.', 'address': '', 'age': 0.5}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d023'), 'name': 'John Doe', 'address': '123 elm street', 'age': 28}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d024'), 'name': 'Jane Doe', 'address': '234 elm street', 'age': 7}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d025'), 'name': 'Santa Claus', 'address': 'The North Pole', 'age': 547}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d026'), 'name': 'John Doe jr.', 'address': '', 'age': 0.5}
 
 
 In the cell above, we grabbed every field from every item in the entire collection. There are times where this is probably too much data for it to be useful for us. 
@@ -306,10 +307,10 @@ for item in query_2:
     print(item)
 ```
 
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee223'), 'name': 'John Doe', 'address': '123 elm street'}
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee224'), 'name': 'Jane Doe', 'address': '234 elm street'}
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee225'), 'name': 'Santa Claus', 'address': 'The North Pole'}
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee226'), 'name': 'John Doe jr.', 'address': ''}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d023'), 'name': 'John Doe', 'address': '123 elm street'}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d024'), 'name': 'Jane Doe', 'address': '234 elm street'}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d025'), 'name': 'Santa Claus', 'address': 'The North Pole'}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d026'), 'name': 'John Doe jr.', 'address': ''}
 
 
 In this method, we created a dictionary with the key of every item we want, and a `1` as the value to make clear that we want that field returned. 
@@ -324,10 +325,10 @@ for item in query_3:
     print(item)
 ```
 
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee223'), 'name': 'John Doe', 'address': '123 elm street'}
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee224'), 'name': 'Jane Doe', 'address': '234 elm street'}
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee225'), 'name': 'Santa Claus', 'address': 'The North Pole'}
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee226'), 'name': 'John Doe jr.', 'address': ''}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d023'), 'name': 'John Doe', 'address': '123 elm street'}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d024'), 'name': 'Jane Doe', 'address': '234 elm street'}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d025'), 'name': 'Santa Claus', 'address': 'The North Pole'}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d026'), 'name': 'John Doe jr.', 'address': ''}
 
 
 Note that we can't use both methods at the same time. We have to either specify what we do want, and make sure that every value is a 1, or specify what we don't want, and make sure every corresponding value is a 0. If we pass in a dictionary containing both, we'll get an error in return. 
@@ -348,7 +349,7 @@ for item in query_4:
     print(item)
 ```
 
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee225'), 'name': 'Santa Claus', 'address': 'The North Pole', 'age': 547}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d025'), 'name': 'Santa Claus', 'address': 'The North Pole', 'age': 547}
 
 
 ##### Filter by Value with Modifiers
@@ -362,8 +363,8 @@ for item in query_5:
     print(item)
 ```
 
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee223'), 'name': 'John Doe', 'address': '123 elm street', 'age': 28}
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee225'), 'name': 'Santa Claus', 'address': 'The North Pole', 'age': 547}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d023'), 'name': 'John Doe', 'address': '123 elm street', 'age': 28}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d025'), 'name': 'Santa Claus', 'address': 'The North Pole', 'age': 547}
 
 
 We can even pass in **_Regular Expressions_** to filter text data and pattern match! You don't know regular expressions yet, but you will learn them in a few sections. When you do, we encourage you to try using them within a mongodb query!
@@ -385,7 +386,7 @@ for item in query_6:
     print(item)
 ```
 
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee223'), 'name': 'John Doe', 'address': '123 elm street', 'age': 29, 'birthday': '02/20/1986'}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d023'), 'name': 'John Doe', 'address': '123 elm street', 'age': 29, 'birthday': '02/20/1986'}
 
 
 In the cell above, the first update we make updates the value for a key that already exists in the document. The second update adds an entirely new key-value pair to the document. As we can see, the syntax for both is the same (just like when we work with Python dictionaries), and is very easy and intuitive to use. 
@@ -423,7 +424,7 @@ for item in query_6:
     print(item)
 ```
 
-    {'_id': ObjectId('63975f6b4c7a4b738f1ee225'), 'name': 'Santa Claus', 'address': 'The North Pole', 'age': 547}
+    {'_id': ObjectId('639764ed4bbc2d79f2d8d025'), 'name': 'Santa Claus', 'address': 'The North Pole', 'age': 547}
 
 
 
@@ -434,7 +435,7 @@ mycollection.delete_many({})
 
 
 
-    <pymongo.results.DeleteResult at 0x7f9778139fa0>
+    <pymongo.results.DeleteResult at 0x7fd378297a30>
 
 
 
