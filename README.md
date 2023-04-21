@@ -4,7 +4,7 @@
 
 In the previous lesson, we introduced the popular NoSQL database __MongoDB__. We executed CRUD operations on a sample dataset using __MongoDB Atlas__, a cloud-based service offered by MongoDB. 
 
-In this lesson, we will expand on your knowledge of MongoDB, cloud computing, and CRUD operations to manipulate data from a MongoDB Atlas database in a Jupyter notebook using the popular Python library, __Pymongo__. 
+In this lesson, we will expand on your knowledge of MongoDB, cloud computing, and CRUD operations to manipulate data from a MongoDB Atlas database in a Jupyter notebook using the popular Python library, __Pymongo__.
 
 This is very similar to the way that sqlite3 allowed us to connect to and work with SQLite databases in previous lessons. In fact, we recommend taking a few minutes to review and bookmark this [table](https://www.tutorialspoint.com/mongodb/mongodb_overview.htm) that contrasts SQL terminology versus Mongo terminology. For example, we can compare MongoDB documents to SQL records. 
 As a reminder __CRUD__ operations include:
@@ -13,6 +13,9 @@ As a reminder __CRUD__ operations include:
 - Read data from a MongoDB database
 - Update data from a MongoDB database
 - Delete data from a MongoDB database
+
+**Keep in Mind:** You will need to clone this lesson from GitHub and work on it locally so that you can connect securely to your MongoDB Atlas server.
+
 
 ## Objectives
 You will be able to:
