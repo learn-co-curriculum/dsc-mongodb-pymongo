@@ -9,10 +9,10 @@ In this lesson, we will expand on your knowledge of MongoDB, cloud computing, an
 This is very similar to the way that sqlite3 allowed us to connect to and work with SQLite databases in previous lessons. In fact, we recommend taking a few minutes to review and bookmark this [table](https://www.tutorialspoint.com/mongodb/mongodb_overview.htm) that contrasts SQL terminology versus Mongo terminology. For example, we can compare MongoDB documents to SQL records. 
 As a reminder __CRUD__ operations include:
 
-- **_C_**reating a MongoDB database
-- **_R_**ead data from a MongoDB database
-- **_U_**pdate data from a MongoDB database
-- **_D_**elete data from a MongoDB database
+- Creating a MongoDB database
+- Read data from a MongoDB database
+- Update data from a MongoDB database
+- Delete data from a MongoDB database
 
 ## Objectives
 You will be able to:
@@ -37,7 +37,7 @@ import pymongo
 ```
 
 ### Retrieve the Connection String
-1. Navigate to the __Database Deployment__ page on the __MongoDB Atlas UI__ and select __Connect__.
+1. Navigate to the **Database Deployment** page on the **MongoDB Atlas UI** and select **Connect**.
 2. Then, select **Connect Your Application** from the menu.
 
 <table><tr><td>
